@@ -55,9 +55,9 @@ A variant that requires 2 out of 3 keys to decrypt would be something with 2 pri
 6. The algorithm would have to be similar to a O(n!) algorithm, but with the parity twist. Let's first look at O(n!). I can think of a very bad algorithm I could use to calculate n!, with a time complexity of O(n!). It is below:
 ```
 void badCalculator(int n){
-for(int i = 0; i<n; i++){
- badCalculator(n-1);
-}
+  for(int i = 0; i<n; i++){
+    badCalculator(n-1);
+  }
 }
 ```
 Here you can see that the loop executes n times, and the function called inside the loop executes (n-1)! times.
@@ -66,9 +66,9 @@ Now, we must find some way to adapt this algorithm to O(n!!) time complexity. We
 to execute (n-2)!! times.
 ```
 void doubleFactorialTime(int n){
-for(int j = 0; j<n; j++){
- doubleFactorialTime(n-2);
-}
+  for(int j = 0; j<n; j++){
+    doubleFactorialTime(n-2);
+  }
 }
 ```
 The above function will have a time complexity of n!!.
