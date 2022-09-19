@@ -29,3 +29,64 @@ Contrasting C and Python:
 - In C, always use { } to open and close statements. This helps improve readability and avoid bugs. Since python relies on indentation, this is not the case in that language.
 
 8. I've heard great things about Gridspace and would love the opportunity to work for you! I am most excited to develop my machine learning and AI skills since I know that you are creating cutting edge AI technology. I have also heard that this is a fast paced work environment, and I want to develop my problem solving skills. 
+
+9. (Mention full stack)
+
+## Technical Discussion Questions
+
+Technical Discussion Questions
+
+1. Compare a Python list to a NumPy ndarray.
+A ndarray is a grid of values (all must have the same type) and is indexed by tuples (comprised of non-negative integers). They have a property called rank which is the number of dimensions, and their shape is a tuple (ints) that gives the size of the array for each dimension. 
+Python lists are similar, but are resizable and can be comprised of multiple types. Also, multi-dimensional python arrays are created by storing a 1-dimensional list inside another. The reason we use NumPy ndarrays is because they consume less and have faster performance. NumPy also has several linear algebra functions built in which makes matrix operations simpler. 
+
+2. According to the Universal Approximation theorem, neural networks can approximate any continuous function (with at least one hidden layer and some non-linear activation functions). However, this means that they cannot always approximate discontinuous functions. For example, f(x) = 1/(x-5). This function has a discontinuity at 5, so a neural network will not be able to approximate it. This is because the loss function of neural networks uses differentiation. However, it is not possible to differentiate at a discontinuity. So, neural networks can't approximate discontinuous functions. 
+
+3. I would use a int[][] array but with a twist. Assuming ints in the language are 32-bit ints, I would store 6 5-bit ints in each. This would make it slightly more difficult to lookup values, but I would be wasting a lot less space.
+
+An adjacency list is better than an adjacency matrix for a sparse graph. Adjacency matrices use O(n^2) memory, have O(1) lookup of specific edges, slow to iterate over all edges, O(1) to add a new edge. Adjacency lists use O(V + E) memory, have O(k) lookup of specific edges, fast to iterate over all edges and are faster to add or remove a node. Since the matrix is sparse, O(n^2) memory would be worse than O(V+E) memory which is one of the main reasons to choose the adjacency list over the matrix.
+
+4. It is human nature to ask successful people how they became successful. However, while this may seem intuitive, it is the wrong approach. If you only ask successful people for advice, you have an extremely biased sample. Instead of looking at the entire dataset (which should include unsuccessful people), we look at those who have succeeded and draw conclusions based on only their characteristics. So, the statistical reason to be wary of accepting life advice from successful people is a biased dataset. It would be better to take a random sample of people so that we can determine the common characteristics of those who didn't succeed, or see that part of the reason some people are successful is simply random chance.
+
+5. With public key encryption, there exists a public key and a private key. The public key is visible to all and is used to encrypt data. The private key is the only way to decrypt data encrypted with the public key. Some common public key encryptions are RSA and ED25519.
+
+A variant that requires 2 out of 3 keys to decrypt would be something with 2 private keys and 1 public key. The public key would be used to encrypt the data and both private keys would be needed to decrypt it. This would be more secure than having just one private key.
+
+6. The algorithm would have to be similar to a O(n!) algorithm, but with the parity twist. Let's first look at O(n!). I can think of a very bad algorithm I could use to calculate n!, with a time complexity of O(n!). It is below:
+
+void badCalculator(int n){
+
+for(int i = 0; i<n; i++){
+ badCalculator(n-1);
+}
+
+}
+
+Here you can see that the loop executes n times, and the function called inside the loop executes (n-1)! times.
+
+Now, we must find some way to adapt this algorithm to O(n!!) time complexity. We want the loop to execute n times, and the inner function 
+to execute (n-2)!! times.
+
+void doubleFactorialTime(int n){
+
+for(int j = 0; j<n; j++){
+ doubleFactorialTime(n-2);
+}
+}
+
+The above function will have a time complexity of n!!.
+
+7. Humans can hear tones at a maximum of 20 kHz. However, research has shown that we can detect the absence of some sounds or components until 32 kHz. So, most sampling for humans happens at 44.1 kHz or 48 kHz. However, lots of people listen to music at lower frequencies. Human speech is not as rich in sound or frequency as music. I know that telephones use about 8 kHz as a sampling rate. So, anywhere between 8 kHz and 48 kHz would be reasonable, with 48 kHz having much richer sound quality. 
+
+Since porpoises have a much higher auditory range, we can invoke the same principles as we did for humans. 150 kHz would be enough but would be less rich in quality. So, we can use a sampling rate of 240 kHz (150 * 32 / 20) for the porpoises so the sound is richer.
+
+8. 
+It depends of what the purpose of the conlang is. However, some things I would definitely include are:
+- Consonants and vowels. I would have fewer connecting vowels since those languages sound "harder" or more guttaral and I like the sound of that.
+- Inflection: I want some words to change how they're inflected based on the mood or context.
+- Grammar: my language will have a grammar structure similar to that of French. I want there to be very specific rules, especially when 
+conjugating verbs.
+- Writing system: I want my writing system to convey the inflection on words based on mood and context. This way, inflection can be written 
+down.
+
+9. With such complex words, the language processing model must be extensively developed. Since so many possible combinations of words arise, it's less feasible to create an entire dictionary of words. This means that the model must be able to "decode" each word and understand the components that go into it. An approach would be to search and analyze documents written in this language and form a collection of texts with accompanying translations for the algorithm to learn from. This way we can teach the processing model how to decode Nahuatl. This languages adds prefixes and suffixes to the words themselves, so it would be good to have one algorithm to remove those and then another to translate the base from and show a translation. 
