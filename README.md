@@ -53,26 +53,24 @@ An adjacency list is better than an adjacency matrix for a sparse graph. Adjacen
 A variant that requires 2 out of 3 keys to decrypt would be something with 2 private keys and 1 public key. The public key would be used to encrypt the data and both private keys would be needed to decrypt it. This would be more secure than having just one private key.
 
 6. The algorithm would have to be similar to a O(n!) algorithm, but with the parity twist. Let's first look at O(n!). I can think of a very bad algorithm I could use to calculate n!, with a time complexity of O(n!). It is below:
-
-```void badCalculator(int n){
+```
+void badCalculator(int n){
 for(int i = 0; i<n; i++){
  badCalculator(n-1);
 }
-
-}```
-
+}
+```
 Here you can see that the loop executes n times, and the function called inside the loop executes (n-1)! times.
 
 Now, we must find some way to adapt this algorithm to O(n!!) time complexity. We want the loop to execute n times, and the inner function 
 to execute (n-2)!! times.
-
-```void doubleFactorialTime(int n){
-
+```
+void doubleFactorialTime(int n){
 for(int j = 0; j<n; j++){
  doubleFactorialTime(n-2);
 }
-}```
-
+}
+```
 The above function will have a time complexity of n!!.
 
 7. Humans can hear tones at a maximum of 20 kHz. However, research has shown that we can detect the absence of some sounds or components until 32 kHz. So, most sampling for humans happens at 44.1 kHz or 48 kHz. However, lots of people listen to music at lower frequencies. Human speech is not as rich in sound or frequency as music. I know that telephones use about 8 kHz as a sampling rate. So, anywhere between 8 kHz and 48 kHz would be reasonable, with 48 kHz having much richer sound quality. 
