@@ -1,24 +1,24 @@
-import math        #import needed modules
+import math
 import wave
-import pyaudio     #sudo apt-get install python-pyaudio
-PyAudio = pyaudio.PyAudio     #initialize pyaudio
-BITRATE = 5000     #number of frames per second/frameset.
-FREQUENCY = 10000     #Hz, waves per second, 261.63=C4-note.
-LENGTH = 5    #seconds to play sound
-if FREQUENCY > BITRATE:
-   BITRATE = FREQUENCY+100
-NUMBEROFFRAMES = int(BITRATE * LENGTH)
-RESTFRAMES = NUMBEROFFRAMES % BITRATE
+BITRATE = 50000
+FREQUENCYA = 392.00
+FREQUENCYB = 659.26
+FREQUENCYC = 523.25
+LENGTH = 1
+WIDTH = 1
+NUMBEROFFRAMESPERNOTE = int(BITRATE * LENGTH )
 WAVEDATA = ''
-#generating waves
-for x in range(NUMBEROFFRAMES):
-     WAVEDATA =WAVEDATA+chr(int(math.sin(x/((BITRATE/FREQUENCY)/math.pi))*127+128))
-for x in range(RESTFRAMES):
-    WAVEDATA = WAVEDATA+chr(128)
-print(WAVEDATA)
-p = PyAudio()
-stream = p.open(format = p.get_format_from_width(1),channels =     2,rate = BITRATE,output = True)
-stream.write(WAVEDATA)
-stream.stop_stream()
-stream.close()
-p.terminate()
+for x in range(NUMBEROFFRAMESPERNOTE):
+     WAVEDATA =WAVEDATA+chr(int(math.sin(x/((BITRATE/FREQUENCYA)/math.pi))*127+128))
+for x in range(NUMBEROFFRAMESPERNOTE):
+     WAVEDATA =WAVEDATA+chr(int(math.sin(x/((BITRATE/FREQUENCYB)/math.pi))*127+128))
+for x in range(NUMBEROFFRAMESPERNOTE):
+     WAVEDATA =WAVEDATA+chr(int(math.sin(x/((BITRATE/FREQUENCYC)/math.pi))*127+128))
+
+wr = wave.open("nbc-chimes.wav", 'wb');
+wr.setnchannels(1);
+wr.setsampwidth(2);
+wr.setframerate(BITRATE)
+b = str.encode(WAVEDATA);
+wr.writeframes(b);
+wr.close();
