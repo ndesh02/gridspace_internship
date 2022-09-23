@@ -16,7 +16,7 @@ class EarthquakeDetector:
         3. Set a flag (called possibly_earthquake) to true
         4. If all the detectors have set their flags to true, trigger the alert
         """
-
+        """If the new slope is 3 x time previous slope, then set the flag"""
         threshold = 5
 
         if old_seismograph_roc == NULL:
