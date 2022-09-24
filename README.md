@@ -77,7 +77,7 @@ The above function will have a time complexity of n!!.
 Since porpoises have a much higher auditory range, we can invoke the same principles as we did for humans. 150 kHz would be enough but would be less rich in quality. So, we can use a sampling rate of 240 kHz (150 * 32 / 20) for the porpoises so the sound is richer.
 
 8. 
-It depends of what the purpose of the conlang is. However, some things I would definitely include are:
+It depends of what the purpose of the conlang is. For example, in the Lord of the Rings, Black speech is a constructed languages that the Orcs speak. However, some things I would definitely include are:
 - Consonants and vowels. I would have fewer connecting vowels since those languages sound "harder" or more guttaral and I like the sound of that.
 - Inflection: I want some words to change how they're inflected based on the mood or context.
 - Grammar: my language will have a grammar structure similar to French. I speak French, and I've found that I much prefer French grammar rules to English as French grammar is much better structured. I want there to be very specific rules, especially when conjugating verbs.
