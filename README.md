@@ -34,8 +34,6 @@ Contrasting C and Python:
 
 ## Technical Discussion Questions
 
-Technical Discussion Questions
-
 1. A ndarray is a grid of values (all must have the same type) and is indexed by tuples (comprised of non-negative integers). They have a property called rank which is the number of dimensions, and their shape is a tuple (ints) that gives the size of the array for each dimension. 
 Python lists are similar, but are resizable and can be comprised of multiple types. Also, multi-dimensional python arrays are created by storing a 1-dimensional list inside another. The reason we use NumPy ndarrays is because they consume less and have faster performance. NumPy also has several linear algebra functions built in which makes matrix operations simpler. 
 
